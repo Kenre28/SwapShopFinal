@@ -22,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-       EditText edtLEmail,edtLPassword;
+        setContentView(R.layout.activity_upload_item);
+        EditText edtLEmail,edtLPassword;
         TextView txtLRegister;
         Button btnLogin;
         FirebaseAuth fAuth;
