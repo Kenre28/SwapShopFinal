@@ -25,10 +25,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         EditText edtLEmail,edtLPassword;
-        TextView txtLRegister;
+        Button btnLRegister;
         Button btnLogin;
         FirebaseAuth fAuth;
-        txtLRegister = findViewById(R.id.txtLRegister);
+        btnLRegister = findViewById(R.id.btnLRegister);
         edtLEmail = findViewById(R.id.edtLEmail);
         edtLPassword = findViewById(R.id.edtLPassword);
         btnLogin = findViewById(R.id.btnLogin);
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         //}
-        txtLRegister.setOnClickListener(new View.OnClickListener() {
+        btnLRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, Register.class));
