@@ -1,21 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/g"
     android:orientation="vertical"
     tools:context=".Home">
 
     <Button
-        android:id="@+id/btnHAddProduct"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="+" />
+        android:id="@+id/btnRecord"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="405dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="8dp"
+        android:text="Record"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSwap"
+        app:layout_constraintVertical_bias="0.191" />
 
     <Button
-        android:id="@+id/btnSignout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Signout" />
-</LinearLayout>
+        android:id="@+id/btnSwap"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="405dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="6dp"
+        android:text="Swap"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnUpload" />
+
+    <Button
+        android:id="@+id/btnUpload"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="402dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="10dp"
+        android:text="Upload"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnView" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="298dp"
+        android:layout_height="95dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="16dp"
+        android:text="SWAPSHOP"
+        android:textColor="#FFFFFF"
+        android:textSize="50sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="99dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/dd" />
+
+    <Button
+        android:id="@+id/btnView"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="404dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="65dp"
+        android:text="view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/btnSearch"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="405dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="8dp"
+        android:text="Search"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSwap"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
