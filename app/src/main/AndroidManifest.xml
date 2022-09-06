@@ -17,6 +17,9 @@
         android:theme="@style/Theme.SwapShop2"
         tools:targetApi="31">
         <activity
+            android:name=".SearchProduct"
+            android:exported="false" />
+        <activity
             android:name=".View"
             android:exported="false" />
         <activity
