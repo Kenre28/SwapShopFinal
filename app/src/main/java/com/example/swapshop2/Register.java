@@ -31,8 +31,8 @@ public class Register extends AppCompatActivity {
         Button btnRegister;
         FirebaseAuth fAuth;
         edtRName = findViewById(R.id.edtRName);
-        edtREmail = findViewById(R.id.edtLEmail);
-        edtRPassword = findViewById(R.id.edtLPassword);
+        edtREmail = findViewById(R.id.edtREmail);
+        edtRPassword = findViewById(R.id.edtRPassword);
         btnRegister  = findViewById(R.id.btnRegister);
         fAuth = FirebaseAuth.getInstance();
         btnRegister.setOnClickListener(new View.OnClickListener() {
