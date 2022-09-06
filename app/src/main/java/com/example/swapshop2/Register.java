@@ -3,6 +3,7 @@ package com.example.swapshop2;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -37,6 +38,7 @@ public class Register extends AppCompatActivity {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String name = edtRName.getText().toString().trim();
                 String email = edtREmail.getText().toString().trim();
                 String pass = edtRPassword.getText().toString().trim();
                 String emailReg = "\\S+@\\S+";
@@ -69,12 +71,29 @@ public class Register extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(Register.this, "User made", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(Register.this, "User made", Toast.LENGTH_SHORT).show();
+                            User user = new User(name,email);
+                            FirebaseDatabase.getInstance().getReference("Users")
+                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                    .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if (task.isSuccessful()){
+                                                Toast.makeText(Register.this,"Successful",Toast.LENGTH_LONG).show();
+                                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+
+                                            }
+                                            else{
+                                                Toast.makeText(Register.this,"Unsuccessful",Toast.LENGTH_LONG).show();
+                                            }
+                                        }
+                                    });
                         }else{
                             Toast.makeText(Register.this, "Error!"+ task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
+
             }
         });
 
