@@ -37,37 +37,37 @@ public class MainActivity extends AppCompatActivity {
         //my code
         //if(fAuth.getCurrentUser()!= null)
         //{
-            //startActivity(new Intent(MainActivity.this, Home.class));
-            //finish();
+        //startActivity(new Intent(MainActivity.this, Home.class));
+        //finish();
         //}else {
-            btnLogin.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    String email = edtLEmail.getText().toString().trim();
-                    String pass = edtLPassword.getText().toString().trim();
-                    if (TextUtils.isEmpty(email)) {
-                        edtLEmail.setError("Email is Required");
-                        return;
-                    }
-                    if (TextUtils.isEmpty(pass)) {
-                        edtLPassword.setError("Password is Required");
-                        return;
-                    }
-
-                    fAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                Toast.makeText(MainActivity.this, "Logged in", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(getApplicationContext(), Home.class));
-                                finish();
-                            } else {
-                                Toast.makeText(MainActivity.this, "Error occurred!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String email = edtLEmail.getText().toString().trim();
+                String pass = edtLPassword.getText().toString().trim();
+                if (TextUtils.isEmpty(email)) {
+                    edtLEmail.setError("Email is Required");
+                    return;
                 }
-            });
+                if (TextUtils.isEmpty(pass)) {
+                    edtLPassword.setError("Password is Required");
+                    return;
+                }
+
+                fAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(MainActivity.this, "Logged in", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(), Home.class));
+                            finish();
+                        } else {
+                            Toast.makeText(MainActivity.this, "Error occurred!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+            }
+        });
         //}
         btnLRegister.setOnClickListener(new View.OnClickListener() {
             @Override
